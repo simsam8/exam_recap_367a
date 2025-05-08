@@ -1,4 +1,4 @@
-# A Sattelite Band Selection Framework For Amazon Forest Deforestation Detection Task
+# A Satellite Band Selection Framework For Amazon Forest Deforestation Detection Task
 
 ## Problem they are trying to solve / Purpose of method
 
