@@ -24,7 +24,7 @@ to the main repo.
 - [ ] Automatic Data Augmentation via Invariance Constrained Learning: [paper](https://arxiv.org/abs/2209.15031), [summary](./papers/automatic_data_augmentation_via_invariance_constrained_learning.md)
 - [x] A Satellite Band Selection Framework: [paper](https://arxiv.org/abs/2404.02659), [summary](./papers/satellite_band_selection_framework.md)
 - [ ] Binary Classification: Is Boosting stronger than Bagging?: [paper](https://arxiv.org/abs/2410.19200), [summary](./papers/is_boosting_stronger_than_bagging.md)
-- [ ] DiffCR - A Fast Conditional Diffusion Framework for Cloud Removal from Optical Satellite Images: [paper](https://ieeexplore.ieee.org/document/10436560), [summary]()
+- [x] DiffCR - A Fast Conditional Diffusion Framework for Cloud Removal from Optical Satellite Images: [paper](https://ieeexplore.ieee.org/document/10436560), [summary](./papers/diffCR.md)
 - [ ] Differentiable Model Selection for Ensemble Learning: [paper](https://arxiv.org/abs/2211.00251), [summary]()
 - [ ] Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains: [paper](https://proceedings.neurips.cc/paper_files/paper/2020/file/55053683268957697aa39fba6f231c68-Paper.pdf), [summary]()
 - [ ] From Data Imputation to Data Cleaning – Automated Cleaning of Tabular Data Improves Downstream Predictive Performance: [paper](https://proceedings.mlr.press/v238/jager24a/jager24a.pdf), [summary]()
