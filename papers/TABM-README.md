@@ -19,7 +19,7 @@ So the **MAIN CONTRIBUTION** is:
 
 ### Figure representation:
 
-![TabM Architecture](tabm_figure.png)
+![TabM Architecture](figures/tabm_figure.png)
 
 - Here the top figure shows the the general idea of TabM. 
    A single TabM model processes k parallel inputs and produces k outputs, which are averaged to get the final prediction.
