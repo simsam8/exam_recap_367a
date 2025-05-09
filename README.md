@@ -44,7 +44,7 @@ to the main repo.
 - [x] SatMAE: Pre-Training Transformers for Temporal and Multi-Spectral Satellite Imagery: [paper](https://proceedings.neurips.cc/paper_files/paper/2022/file/01c561df365429f33fcd7a7faa44c985-Paper-Conference.pdf), [summary](./papers/SatMAE.md)
 - [x] SatSynth: Augmenting Image-Mask Pairs through Diffusion Models for Aerial Semantic Segmentation: [paper](https://arxiv.org/abs/2403.16605), [summary](./papers/SatSynth.md)
 - [ ] Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks: [paper](https://arxiv.org/abs/1506.03099), [summary]()
-- [?] Segment-then-Classify: Few-shot instance segmentation for environmental remote sensing: [paper](https://www.climatechange.ai/papers/neurips2023/53), [summary]()
+- [?] Segment-then-Classify: Few-shot instance segmentation for environmental remote sensing: [paper](https://www.climatechange.ai/papers/neurips2023/53), [summary](./papers/segment_then_classify.md)
 - [x] SegFormer: Simple and Efficient Design for Semantic Segmentation with Transformers: [paper](https://arxiv.org/abs/2105.15203), [summary](./papers/segformer.md)
 - [x] Super-resolution of Sentinel-2 images: Learning a globally applicable deep neural network: [paper](https://www.sciencedirect.com/science/article/pii/S0924271618302636), [summary](./papers/super_resolution.md)
 - [ ] Surrogate uncertainty estimation for your time series forecasting black box: learn when to trust: [paper](https://ieeexplore.ieee.org/iel7/10411504/10411508/10411608.pdf), [summary]()
