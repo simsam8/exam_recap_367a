@@ -35,7 +35,7 @@ to the main repo.
 - [ ] Mamba: Linear-Time Sequence Modeling with Selective State Spaces: [paper](https://arxiv.org/abs/2312.00752), [summary]()
 - [x] Multi-Robot Path Planning Combining Heuristics and Multi-Agent Reinforcement Learning: [paper](https://arxiv.org/abs/2306.01270), [summary](./papers/multi_robot_path_planning.md)
 - [x] Object-Based Augmentation Improves Quality of Remote Sensing Semantic Segmentation: [paper](https://arxiv.org/abs/2105.05516), [summary](./papers/object_based_augmentation.md)
-- [ ] OpenFE: Automated Feature Generation with Expert-level Performance: [paper](https://arxiv.org/abs/2211.12507), [summary]()
+- [x] OpenFE: Automated Feature Generation with Expert-level Performance: [paper](https://arxiv.org/abs/2211.12507), [summary](./papers/OpenFE.md)
 - [ ] PseudoSeg: Designing Pseudo Labels for Semantic Segmentation: [paper](https://arxiv.org/abs/2010.09713), [summary]()
 - [ ] R2U++: a multiscale recurrent residual U-Net with dense skip connections for medical image segmentation: [paper](https://link.springer.com/content/pdf/10.1007/s00521-022-07419-7.pdf), [summary]()
 - [ ] Rethinking Transformers Pre-training for Multi-Spectral Satellite Imagery: [paper](https://arxiv.org/abs/2403.05419), [summary]()
