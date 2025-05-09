@@ -33,7 +33,7 @@ to the main repo.
 - [ ] Improving Domain Generalization with Interpolation Robustness: [paper](https://openreview.net/pdf?id=Yl_4LpR_3Z)
 - [ ] Learning to Maximize Mutual Information for Dynamic Feature Selection: [paper](https://proceedings.mlr.press/v202/covert23a/covert23a.pdf), [summary]()
 - [ ] Mamba: Linear-Time Sequence Modeling with Selective State Spaces: [paper](https://arxiv.org/abs/2312.00752), [summary]()
-- [ ] Multi-Robot Path Planning Combining Heuristics and Multi-Agent Reinforcement Learning: [paper](https://arxiv.org/abs/2306.01270), [summary]()
+- [x] Multi-Robot Path Planning Combining Heuristics and Multi-Agent Reinforcement Learning: [paper](https://arxiv.org/abs/2306.01270), [summary]()
 - [ ] Object-Based Augmentation Improves Quality of Remote Sensing Semantic Segmentation: [paper](https://arxiv.org/abs/2105.05516), [summary]()
 - [ ] OpenFE: Automated Feature Generation with Expert-level Performance: [paper](https://arxiv.org/abs/2211.12507), [summary]()
 - [ ] PseudoSeg: Designing Pseudo Labels for Semantic Segmentation: [paper](https://arxiv.org/abs/2010.09713), [summary]()
