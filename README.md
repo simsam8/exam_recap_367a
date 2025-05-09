@@ -11,7 +11,8 @@
 
 1. Fork the repo.
 2. Copy the template and create your paper overview and 
-put it in the [papers/](./papers/) folder.
+put it in the [papers/](./papers/) folder. If you add images, 
+put them in the [figures](./papers/figures/) folder.
 3. Once you have made your changes, 
 press contribute in your fork, and create a pull request
 to the main repo.
