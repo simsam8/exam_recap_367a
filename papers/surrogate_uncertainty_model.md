@@ -18,7 +18,7 @@
 
 - The surrogate model is a realization of gaussian process regression. 
 - The surrogate model trained with a combined loss function. 
-- They train a surrogate model to mimick the base model (already trained  model). 
+- They train a surrogate model to mimic the base model (already trained  model). 
 - The uncertainty prediciton will be a normal distrobution (gaussian) where the mean is the predicion from the base model and the standard diviation from the surrogate model
 
 ### New dataset
