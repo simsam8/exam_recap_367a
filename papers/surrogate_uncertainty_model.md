@@ -23,7 +23,7 @@
 
 ### New dataset
 
-The method samples L amount of random datapoints from the domain the training points are in. This is used to query the base model to make new predictions the surrogate model will train to mimick the base model
+The method samples L amount of random datapoints from the domain the training points are in. This is used to query the base model to make new predictions the surrogate model will train to mimic the base model
 
 ### Loss function
 
@@ -44,6 +44,5 @@ To the train the model:
 - sample L amount of datapoints
 - get the basemodel predictions on the new sampled data
 - define the surrogate model (gaussian process regression)
-- train
 
 ![BAMOEs pseudocode](figures/BAMOES-pseudo.png)
