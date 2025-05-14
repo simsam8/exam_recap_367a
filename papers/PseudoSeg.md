@@ -23,6 +23,15 @@ To produce a grad-cam output, we need a classifier head. Intuitively, it tells u
 
 The refinement process is very similar to the self-attention mechanism. "Key" and "query" are computed from with output from the backbone, and "value" is the grad-cam output. intuition: use information from the backbone to compute the similarity between regions, and then we can "spread", or propagate, the grad-cam output to other regions if they are deemed similar. 
 
+TRAINING:
+- supervised data:
+	- classifier (if unsupervised is completely unlabelled)
+	- self-attention refinement module
+	- decoder
+	
+- unsupervised data:
+	- consistency training 
+
 
 ![[pipeline.png]]
 
