@@ -36,6 +36,14 @@ intuition: use information from the backbone to compute the similarity between r
 and then we can "spread", or propagate,
 the grad-cam output to other regions if they are deemed similar. 
 
+TRAINING:
+- supervised data:
+	- classifier (if unsupervised is completely unlabelled)
+	- self-attention refinement module
+	- decoder
+	
+- unsupervised data:
+	- consistency training 
 
 ![PseudoSeg Pipeline](./figures/pseudoseg_pipeline.png)
 
