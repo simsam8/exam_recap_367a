@@ -32,7 +32,7 @@ if it contains any mistakes.
 - [x] DiffCR - A Fast Conditional Diffusion Framework for Cloud Removal from Optical Satellite Images: [paper](https://ieeexplore.ieee.org/document/10436560), [summary](./papers/diffCR.md)
 - [?] Differentiable Model Selection for Ensemble Learning: [paper](https://arxiv.org/abs/2211.00251), [summary](./papers/differentiable_model_selection_for_ensemble_learning.md)
 - [ ] Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains: [paper](https://proceedings.neurips.cc/paper_files/paper/2020/file/55053683268957697aa39fba6f231c68-Paper.pdf), [summary]()
-- [ ] From Data Imputation to Data Cleaning – Automated Cleaning of Tabular Data Improves Downstream Predictive Performance: [paper](https://proceedings.mlr.press/v238/jager24a/jager24a.pdf), [summary]()
+- [x] From Data Imputation to Data Cleaning – Automated Cleaning of Tabular Data Improves Downstream Predictive Performance: [paper](https://proceedings.mlr.press/v238/jager24a/jager24a.pdf), [summary](./papers/automated_cleaning_of_tabular_data.md)
 - [x] GRANDE: Gradient-Based Decision Tree Ensembles for Tabular Data: [paper](https://arxiv.org/abs/2309.17130), [summary](./papers/GRANDE.md)
 - [x] High-Resolution Image Synthesis with Latent Diffusion Models: [paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf), [summary](./papers/high_resolution_image_sythesis.md)
 - [x] Improving Domain Generalization with Interpolation Robustness: [paper](https://openreview.net/pdf?id=Yl_4LpR_3Z), [summary](./papers/improving_domain_generalization.md)
