@@ -37,7 +37,7 @@ if it contains any mistakes.
 - [x] High-Resolution Image Synthesis with Latent Diffusion Models: [paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf), [summary](./papers/high_resolution_image_sythesis.md), [pdf](./pdfs/high_resolution_image_sythesis.pdf)
 - [x] Improving Domain Generalization with Interpolation Robustness: [paper](https://openreview.net/pdf?id=Yl_4LpR_3Z), [summary](./papers/improving_domain_generalization.md), [pdf](./pdfs/improving_domain_generalization.pdf)
 - [x] Learning to Maximize Mutual Information for Dynamic Feature Selection: [paper](https://proceedings.mlr.press/v202/covert23a/covert23a.pdf), [summary](./papers/maximize_mutual_information.md), [pdf](./pdfs/maximize_mutual_information.pdf)
-- [ ] Mamba: Linear-Time Sequence Modeling with Selective State Spaces: [paper](https://arxiv.org/abs/2312.00752), [summary](), [pdf]()
+- [x] Mamba: Linear-Time Sequence Modeling with Selective State Spaces: [paper](https://arxiv.org/abs/2312.00752), [summary](./papers/mamba.md), [pdf](./pdfs/mamba.pdf)
 - [x] Multi-Robot Path Planning Combining Heuristics and Multi-Agent Reinforcement Learning: [paper](https://arxiv.org/abs/2306.01270), [summary](./papers/multi_robot_path_planning.md), [pdf](./pdfs/multi_robot_path_planning.pdf)
 - [x] Object-Based Augmentation Improves Quality of Remote Sensing Semantic Segmentation: [paper](https://arxiv.org/abs/2105.05516), [summary](./papers/object_based_augmentation.md), [pdf](./pdfs/object_based_augmentation.pdf)
 - [x] OpenFE: Automated Feature Generation with Expert-level Performance: [paper](https://arxiv.org/abs/2211.12507), [summary](./papers/OpenFE.md), [pdf](./pdfs/OpenFE.pdf)
