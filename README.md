@@ -44,7 +44,7 @@ if it contains any mistakes.
 - [x] PseudoSeg: Designing Pseudo Labels for Semantic Segmentation: [paper](https://arxiv.org/abs/2010.09713), [summary](./papers/PseudoSeg.md)
 - [x] R2U++: a multiscale recurrent residual U-Net with dense skip connections for medical image segmentation: [paper](https://link.springer.com/content/pdf/10.1007/s00521-022-07419-7.pdf), [summary](./papers/r2u++.md)
 - [?] Rethinking Transformers Pre-training for Multi-Spectral Satellite Imagery: [paper](https://arxiv.org/abs/2403.05419), [summary](./papers/SatMAE++.md)
-- [ ] SAM 2: Segment Anything in Images and Videos: [paper](https://arxiv.org/abs/2408.00714), [summary]()
+- [x] SAM 2: Segment Anything in Images and Videos: [paper](https://arxiv.org/abs/2408.00714), [summary](./papers/SAM2.md)
 - [x] SatMAE: Pre-Training Transformers for Temporal and Multi-Spectral Satellite Imagery: [paper](https://proceedings.neurips.cc/paper_files/paper/2022/file/01c561df365429f33fcd7a7faa44c985-Paper-Conference.pdf), [summary](./papers/SatMAE.md)
 - [x] SatSynth: Augmenting Image-Mask Pairs through Diffusion Models for Aerial Semantic Segmentation: [paper](https://arxiv.org/abs/2403.16605), [summary](./papers/SatSynth.md)
 - [?] Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks: [paper](https://arxiv.org/abs/1506.03099), [summary](./papers/scheduled_sampling_for_sequence_prediction.md)
