@@ -28,7 +28,7 @@ if it contains any mistakes.
 - [x] Automating Privilege Escalation with Deep Reinforcement Learning: [paper](https://dl.acm.org/doi/abs/10.1145/3474369.3486877), [summary](./papers/automatic_privilege_escalation.md)
 - [x] Automatic Data Augmentation via Invariance Constrained Learning: [paper](https://arxiv.org/abs/2209.15031), [summary](./papers/automatic_data_augmentation_via_invariance_constrained_learning.md)
 - [x] A Satellite Band Selection Framework: [paper](https://arxiv.org/abs/2404.02659), [summary](./papers/satellite_band_selection_framework.md)
-- [?] Binary Classification: Is Boosting stronger than Bagging?: [paper](https://arxiv.org/abs/2410.19200), [summary](./papers/is_boosting_stronger_than_bagging.md)
+- [x] Binary Classification: Is Boosting stronger than Bagging?: [paper](https://arxiv.org/abs/2410.19200), [summary](./papers/is_boosting_stronger_than_bagging.md)
 - [x] DiffCR - A Fast Conditional Diffusion Framework for Cloud Removal from Optical Satellite Images: [paper](https://ieeexplore.ieee.org/document/10436560), [summary](./papers/diffCR.md)
 - [?] Differentiable Model Selection for Ensemble Learning: [paper](https://arxiv.org/abs/2211.00251), [summary](./papers/differentiable_model_selection_for_ensemble_learning.md)
 - [ ] Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains: [paper](https://proceedings.neurips.cc/paper_files/paper/2020/file/55053683268957697aa39fba6f231c68-Paper.pdf), [summary]()
