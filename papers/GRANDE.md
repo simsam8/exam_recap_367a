@@ -1,5 +1,7 @@
 # GRANDE: Gradient-Based Decision Tree Ensembles for Tabular Data
 
+**DISCLAIMER**: Summarized by AI
+
 ## Problem they are trying to solve / Purpose of method
 
 The GRANDE method aims to bridge the performance gap between

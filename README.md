@@ -20,6 +20,8 @@ to the main repo.
 
 ## Papers Covered
 
+__DISCLAIMER__: Some of the papers are summarized with an LLM.
+
 - [x] An improved random forest based on the classification accuracy and correlation measurement of decision trees: [paper](https://www.sciencedirect.com/science/article/pii/S0957417423020511), [summary](./papers/improved_random_forest.md)
 - [ ] Automating Privilege Escalation with Deep Reinforcement Learning: [paper](https://dl.acm.org/doi/abs/10.1145/3474369.3486877), [summary]()
 - [?] Automatic Data Augmentation via Invariance Constrained Learning: [paper](https://arxiv.org/abs/2209.15031), [summary](./papers/automatic_data_augmentation_via_invariance_constrained_learning.md)
