@@ -33,7 +33,7 @@ __DISCLAIMER__: Some of the papers are summarized with an LLM.
 - [ ] From Data Imputation to Data Cleaning – Automated Cleaning of Tabular Data Improves Downstream Predictive Performance: [paper](https://proceedings.mlr.press/v238/jager24a/jager24a.pdf), [summary]()
 - [x] GRANDE: Gradient-Based Decision Tree Ensembles for Tabular Data: [paper](https://arxiv.org/abs/2309.17130), [summary](./papers/GRANDE.md)
 - [ ] High-Resolution Image Synthesis with Latent Diffusion Models: [paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf), [summary]()
-- [ ] Improving Domain Generalization with Interpolation Robustness: [paper](https://openreview.net/pdf?id=Yl_4LpR_3Z)
+- [x] Improving Domain Generalization with Interpolation Robustness: [paper](https://openreview.net/pdf?id=Yl_4LpR_3Z), [summary](./papers/improving_domain_generalization.md)
 - [ ] Learning to Maximize Mutual Information for Dynamic Feature Selection: [paper](https://proceedings.mlr.press/v202/covert23a/covert23a.pdf), [summary]()
 - [ ] Mamba: Linear-Time Sequence Modeling with Selective State Spaces: [paper](https://arxiv.org/abs/2312.00752), [summary]()
 - [x] Multi-Robot Path Planning Combining Heuristics and Multi-Agent Reinforcement Learning: [paper](https://arxiv.org/abs/2306.01270), [summary](./papers/multi_robot_path_planning.md)
