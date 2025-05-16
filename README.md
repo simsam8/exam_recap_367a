@@ -20,7 +20,9 @@ to the main repo.
 
 ## Papers Covered
 
-__DISCLAIMER__: Some of the papers are summarized with an LLM.
+__DISCLAIMER__: Some of the papers are summarized with an LLM. 
+They are marked with a disclaimer. Feel free to replace it with your own summary, or modify it 
+if it contains any mistakes.
 
 - [x] An improved random forest based on the classification accuracy and correlation measurement of decision trees: [paper](https://www.sciencedirect.com/science/article/pii/S0957417423020511), [summary](./papers/improved_random_forest.md)
 - [ ] Automating Privilege Escalation with Deep Reinforcement Learning: [paper](https://dl.acm.org/doi/abs/10.1145/3474369.3486877), [summary]()
