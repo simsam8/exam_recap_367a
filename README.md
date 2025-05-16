@@ -47,6 +47,6 @@ to the main repo.
 - [?] Segment-then-Classify: Few-shot instance segmentation for environmental remote sensing: [paper](https://www.climatechange.ai/papers/neurips2023/53), [summary](./papers/segment_then_classify.md)
 - [x] SegFormer: Simple and Efficient Design for Semantic Segmentation with Transformers: [paper](https://arxiv.org/abs/2105.15203), [summary](./papers/segformer.md)
 - [x] Super-resolution of Sentinel-2 images: Learning a globally applicable deep neural network: [paper](https://www.sciencedirect.com/science/article/pii/S0924271618302636), [summary](./papers/super_resolution.md)
-- [ ] Surrogate uncertainty estimation for your time series forecasting black box: learn when to trust: [paper](https://ieeexplore.ieee.org/iel7/10411504/10411508/10411608.pdf), [summary]()
+- [x] Surrogate uncertainty estimation for your time series forecasting black box: learn when to trust: [paper](https://ieeexplore.ieee.org/iel7/10411504/10411508/10411608.pdf), [summary](./papers/surrogate_uncertainty_model.md)
 - [x] TabM: Advanced Tabular Deep Learning with Parameter-Efficient Ensembling: [paper](https://openreview.net/forum?id=Sd4wYYOhmY), [summary](./papers/TABM-README.md)
 - [x] TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation: [paper](https://arxiv.org/abs/2102.04306), [summary](./papers/TransUNet.md)
