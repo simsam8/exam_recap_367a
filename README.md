@@ -30,7 +30,7 @@ if it contains any mistakes.
 - [x] A Satellite Band Selection Framework: [paper](https://arxiv.org/abs/2404.02659), [summary](./papers/satellite_band_selection_framework.md)
 - [x] Binary Classification: Is Boosting stronger than Bagging?: [paper](https://arxiv.org/abs/2410.19200), [summary](./papers/is_boosting_stronger_than_bagging.md)
 - [x] DiffCR - A Fast Conditional Diffusion Framework for Cloud Removal from Optical Satellite Images: [paper](https://ieeexplore.ieee.org/document/10436560), [summary](./papers/diffCR.md)
-- [?] Differentiable Model Selection for Ensemble Learning: [paper](https://arxiv.org/abs/2211.00251), [summary](./papers/differentiable_model_selection_for_ensemble_learning.md)
+- [x] Differentiable Model Selection for Ensemble Learning: [paper](https://arxiv.org/abs/2211.00251), [summary](./papers/differentiable_model_selection_for_ensemble_learning.md)
 - [ ] Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains: [paper](https://proceedings.neurips.cc/paper_files/paper/2020/file/55053683268957697aa39fba6f231c68-Paper.pdf), [summary]()
 - [x] From Data Imputation to Data Cleaning – Automated Cleaning of Tabular Data Improves Downstream Predictive Performance: [paper](https://proceedings.mlr.press/v238/jager24a/jager24a.pdf), [summary](./papers/automated_cleaning_of_tabular_data.md)
 - [x] GRANDE: Gradient-Based Decision Tree Ensembles for Tabular Data: [paper](https://arxiv.org/abs/2309.17130), [summary](./papers/GRANDE.md)
