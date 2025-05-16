@@ -5,7 +5,8 @@
 ## Problem they are trying to solve / Purpose of method
 
 **Goal**:  
-Automatically adapt data augmentation strategies during training by leveraging invariance properties of data, without relying on fixed, handcrafted augmentation policies or expensive search-based methods.
+Automatically adapt data augmentation strategies during training by leveraging invariance properties of data,
+without relying on fixed, handcrafted augmentation policies or expensive search-based methods.
 
 **Challenges with previous methods**:
 - Fixed augmentation policies can introduce bias if transformations are misaligned with data distribution.
@@ -16,16 +17,21 @@ Automatically adapt data augmentation strategies during training by leveraging i
 - Embedding invariance in model architectures is complex and computationally costly.
 
 **Motivation**:  
-Rather than statically defining how and when to augment, the authors propose to **treat augmentation as an invariance constraint in learning**, and use optimization to dynamically adjust the augmentation process.
+Rather than statically defining how and when to augment,
+the authors propose to **treat augmentation as an invariance constraint in learning**,
+and use optimization to dynamically adjust the augmentation process.
 
 ---
 
 ## How does it differ from other methods?
 
 **Key Differences**:
-- **Formulation**: Casts data augmentation as a **constrained optimization problem**, where the constraint enforces invariance (i.e., stability of model predictions under transformations).
-- **No predefined augmentation policy**: The transformation distribution is discovered during training by solving a dual optimization problem.
-- **Handles non-differentiable transformations**: Uses **Monte Carlo Markov Chain (MCMC) sampling**, not gradients, to find augmentations — avoids a major limitation of previous gradient-based methods.
+- **Formulation**: Casts data augmentation as a **constrained optimization problem**,
+where the constraint enforces invariance (i.e., stability of model predictions under transformations).
+- **No predefined augmentation policy**: The transformation distribution is discovered during
+training by solving a dual optimization problem.
+- **Handles non-differentiable transformations**: Uses **Monte Carlo Markov Chain (MCMC) sampling**,
+not gradients, to find augmentations — avoids a major limitation of previous gradient-based methods.
 - **Dynamic control**: The method automatically adjusts:
   - Whether to augment
   - How much to augment
@@ -54,7 +60,8 @@ Rather than statically defining how and when to augment, the authors propose to 
   - Dual formulation introduces a Lagrange multiplier (γ) to weight the invariance constraint.
   - Primal-dual updates alternate between optimizing model weights and adjusting γ.
 - **Sampling**:
-  - Instead of computing gradients w.r.t. transformations, sample them using **Metropolis-Hastings MCMC**, based on how much loss each transformation induces.
+  - Instead of computing gradients w.r.t. transformations, sample them using **Metropolis-Hastings MCMC**,
+  based on how much loss each transformation induces.
   - Allows use of non-differentiable transforms.
 - **Adaptivity**:
   - The augmentation distribution evolves throughout training.
