@@ -34,7 +34,7 @@ if it contains any mistakes.
 - [ ] Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains: [paper](https://proceedings.neurips.cc/paper_files/paper/2020/file/55053683268957697aa39fba6f231c68-Paper.pdf), [summary]()
 - [ ] From Data Imputation to Data Cleaning – Automated Cleaning of Tabular Data Improves Downstream Predictive Performance: [paper](https://proceedings.mlr.press/v238/jager24a/jager24a.pdf), [summary]()
 - [x] GRANDE: Gradient-Based Decision Tree Ensembles for Tabular Data: [paper](https://arxiv.org/abs/2309.17130), [summary](./papers/GRANDE.md)
-- [ ] High-Resolution Image Synthesis with Latent Diffusion Models: [paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf), [summary]()
+- [x] High-Resolution Image Synthesis with Latent Diffusion Models: [paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf), [summary](./papers/high_resolution_image_sythesis.md)
 - [x] Improving Domain Generalization with Interpolation Robustness: [paper](https://openreview.net/pdf?id=Yl_4LpR_3Z), [summary](./papers/improving_domain_generalization.md)
 - [ ] Learning to Maximize Mutual Information for Dynamic Feature Selection: [paper](https://proceedings.mlr.press/v202/covert23a/covert23a.pdf), [summary]()
 - [ ] Mamba: Linear-Time Sequence Modeling with Selective State Spaces: [paper](https://arxiv.org/abs/2312.00752), [summary]()
