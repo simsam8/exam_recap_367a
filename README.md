@@ -26,7 +26,7 @@ if it contains any mistakes.
 
 - [x] An improved random forest based on the classification accuracy and correlation measurement of decision trees: [paper](https://www.sciencedirect.com/science/article/pii/S0957417423020511), [summary](./papers/improved_random_forest.md)
 - [x] Automating Privilege Escalation with Deep Reinforcement Learning: [paper](https://dl.acm.org/doi/abs/10.1145/3474369.3486877), [summary](./papers/automatic_privilege_escalation.md)
-- [?] Automatic Data Augmentation via Invariance Constrained Learning: [paper](https://arxiv.org/abs/2209.15031), [summary](./papers/automatic_data_augmentation_via_invariance_constrained_learning.md)
+- [x] Automatic Data Augmentation via Invariance Constrained Learning: [paper](https://arxiv.org/abs/2209.15031), [summary](./papers/automatic_data_augmentation_via_invariance_constrained_learning.md)
 - [x] A Satellite Band Selection Framework: [paper](https://arxiv.org/abs/2404.02659), [summary](./papers/satellite_band_selection_framework.md)
 - [?] Binary Classification: Is Boosting stronger than Bagging?: [paper](https://arxiv.org/abs/2410.19200), [summary](./papers/is_boosting_stronger_than_bagging.md)
 - [x] DiffCR - A Fast Conditional Diffusion Framework for Cloud Removal from Optical Satellite Images: [paper](https://ieeexplore.ieee.org/document/10436560), [summary](./papers/diffCR.md)
