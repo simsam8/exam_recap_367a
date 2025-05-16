@@ -41,6 +41,7 @@ The method samples L amount of random datapoints from the domain the training po
 ### Training
 
 To the train the model:
+
 - sample L amount of datapoints
 - get the basemodel predictions on the new sampled data
 - define the surrogate model (gaussian process regression)

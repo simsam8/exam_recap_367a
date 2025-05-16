@@ -7,15 +7,17 @@
 The SAM 2 model aims to advance **promptable visual segmentation (PVS)** by extending the capabilities of the
 original SAM (Segment Anything Model) from static image segmentation to dynamic video segmentation.
 
-- **Previous problems**:
-  - Original SAM handled static images only, ignoring the temporal complexity of videos.
-  - Video segmentation is more challenging due to occlusions, motion blur, deformations, and lighting changes.
-  - Existing video segmentation models lacked generalization, struggled with sparse prompts, and had inefficient refinement mechanisms.
+**Previous problems**:
 
-- **Why SAM 2 is needed**:
-  - There is a growing need for a **unified segmentation system** that works seamlessly across images and videos.
-  - Applications in AR/VR, robotics, video editing, and autonomous systems require accurate and efficient **spatio-temporal segmentation**.
-  - Existing datasets and tools were limited in scale and diversity, hindering progress in segmenting "anything" in videos.
+- Original SAM handled static images only, ignoring the temporal complexity of videos.
+- Video segmentation is more challenging due to occlusions, motion blur, deformations, and lighting changes.
+- Existing video segmentation models lacked generalization, struggled with sparse prompts, and had inefficient refinement mechanisms.
+
+**Why SAM 2 is needed**:
+
+- There is a growing need for a **unified segmentation system** that works seamlessly across images and videos.
+- Applications in AR/VR, robotics, video editing, and autonomous systems require accurate and efficient **spatio-temporal segmentation**.
+- Existing datasets and tools were limited in scale and diversity, hindering progress in segmenting "anything" in videos.
 
 
 ## How does it differ from other methods?
@@ -35,6 +37,7 @@ original SAM (Segment Anything Model) from static image segmentation to dynamic 
 ### Simple overview:
 
 SAM 2 extends SAM’s image segmentation capabilities to video by adding:
+
 - A **memory mechanism** to track object appearances across time.
 - A **promptable architecture** that accepts user inputs (clicks, boxes, masks) at any point.
 - A **data engine** to build a large-scale, diverse segmentation dataset (SA-V) for training and evaluation.

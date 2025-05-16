@@ -14,7 +14,6 @@ without incurring significant resource usage or requiring architectural compromi
 
 The purpose of introducing LDMs is to enable high-resolution and semantically-aware image synthesis while dramatically reducing computational complexity.
 
----
 
 ## How does it differ from other methods?
 
@@ -28,16 +27,17 @@ separately trained autoencoder and a U-Net-based diffusion model in latent space
 
 These features make LDMs both *efficient* and *flexible* for high-quality image generation and editing tasks.
 
----
 
 ## How the method works
 
 **Simple Overview**:
+
 1. Compress the image into a lower-dimensional latent representation using a pretrained autoencoder.
 2. Apply the diffusion model (a denoising process) in this latent space.
 3. Decode the generated latent representation back to the image space using the decoder.
 
 **More Details**:
+
 - The autoencoder is trained to reconstruct images while preserving perceptual quality.
 - The latent space is used as the domain for diffusion, dramatically reducing dimensionality and training costs.
 - The diffusion model is based on a U-Net with cross-attention mechanisms, supporting conditional generation.

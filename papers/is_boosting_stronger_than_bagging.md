@@ -25,16 +25,19 @@ However, they differ significantly in how they achieve this. The paper addresses
 Boosting and Bagging both aim to improve prediction accuracy but follow different approaches:
 
 ### Bagging:
+
 - Focuses on **reducing variance** by training base learners on **random resamples** of the data (bootstrapping).
 - All models are **trained independently**.
 - Final prediction is made by **majority voting** (classification).
 
 ### Boosting:
+
 - Aims to **reduce both bias and variance**, especially effective for high-bias models.
 - Learners are **trained sequentially**, with each new learner focusing on **examples misclassified** by previous ones.
 - Final model is a **weighted vote** of all learners.
 
 ### Unique Aspects Highlighted:
+
 - Boosting may lead to **overfitting resistance**, even when training error is low.
 - Bagging improves **unstable learners** more significantly (e.g., CART), while Boosting can **also improve stable learners** like Naive Bayes .
 
@@ -47,6 +50,7 @@ Boosting and Bagging both aim to improve prediction accuracy but follow differen
 - The focus is on comparing their **classification error**, **bias**, and **variance**.
 
 ### Boosting (AdaBoost/Arcing):
+
 1. Train a weak learner on the full dataset.
 2. Increase weight on misclassified instances.
 3. Train next learner on the **weighted data**.
@@ -54,11 +58,13 @@ Boosting and Bagging both aim to improve prediction accuracy but follow differen
 5. Final decision is a **weighted vote** of all learners.
 
 ### Bagging:
+
 1. Generate multiple bootstrap samples from the dataset.
 2. Train a learner on each sample independently.
 3. Final decision is made via **majority voting**.
 
 ### Findings:
+
 - Boosting tends to reduce both bias and variance in many cases.
 - Bagging is more consistent in reducing **variance**, especially with high-variance learners like CART.
 - Boosting can outperform Bagging, especially when the base learner has **high bias**, but is **more sensitive to noise**.

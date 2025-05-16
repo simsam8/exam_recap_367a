@@ -25,11 +25,13 @@ making it easy to integrate into existing RNN-based models.
 ## How the method works
 
 **Overview**:
+
 - Scheduled Sampling is a training strategy for sequence prediction models (like RNNs) that
 intermittently replaces ground-truth tokens with the model’s own predictions during training,
 controlled by a sampling schedule.
 
 **Details**:
+
 1. **Training Loop**: At each time step during training,
 the next input token is chosen either from the ground-truth data or from the model's prediction at the previous step.
 2. **Sampling Probability**: The probability of choosing the ground-truth token decreases over time,
@@ -38,5 +40,6 @@ based on a pre-defined schedule (e.g., linear decay, exponential decay, or inver
 but it learns under increasingly realistic (inference-like) conditions.
 
 **Benefits**:
+
 - Reduces exposure bias.
 - Helps the model learn to correct or recover from its own errors during generation.

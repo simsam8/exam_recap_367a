@@ -13,6 +13,7 @@ but they underperform on tabular data.
 GRANDE is introduced to combine the strengths of both paradigms.
 
 **Key problems addressed:**
+
 - GBDTs are hard to optimize with gradient descent and often require greedy construction.
 - Deep learning struggles with tabular data due to issues like poor generalization and feature sparsity.
 - Previous tree neural networks often lack scalability and generalization.
@@ -20,11 +21,13 @@ GRANDE is introduced to combine the strengths of both paradigms.
 ## How does it differ from other methods?
 
 GRANDE is unique in that it:
+
 - Embeds decision trees into neural networks, enabling optimization via gradient descent.
 - Uses an attention-based architecture that learns soft feature splits, unlike traditional hard decision rules.
 - Combines the interpretability and strong performance of GBDTs with the end-to-end training and flexibility of deep networks.
 
 **Compared to prior approaches like NODE and DNDT:**
+
 - GRANDE supports *dense stacking* of differentiable trees with residual connections.
 - It avoids issues with vanishing gradients common in deeper differentiable tree models
 by applying gating and residual design principles inspired by transformers.
@@ -38,6 +41,7 @@ It uses a combination of attention, soft feature selection,
 and residual learning to build a stack of decision tree-like modules that are optimized end-to-end.
 
 **Detailed steps**:
+
 1. **Tree Modules**: Each module mimics a decision tree using soft decisions over features.
 These modules are differentiable, allowing gradients to propagate.
 2. **Soft Attention Split**: Instead of hard splits, GRANDE uses learned attention over features and thresholds,

@@ -35,6 +35,7 @@ e2e-CEL **learns per-input sub-ensemble selections** rather than global or stati
 - Employs a **perturbed optimizer technique** (e.g., Gumbel-based smoothing) to maintain differentiability in the selection process.
 
 **Key distinction:**
+
 - It turns ensemble selection into an **optimization problem embedded within a neural network**,
 trained via backpropagation — **the first method to do this for input-conditioned ensemble selection**.
 
@@ -50,12 +51,12 @@ trained via backpropagation — **the first method to do this for input-conditio
 
 **More detailed steps:**
 
-1. **Selection Net (gθ)**: Given input `z`, it predicts scores `ĉ` for each base learner.
-2. **Sub-ensemble Selection**: Solve a knapsack-like problem to select top-k learners based on `ĉ`.
-The selection function `K(ĉ)` is smoothed using noise perturbation (based on Gumbel-max trick) to ensure differentiability.
+1. **Selection Net ($g\theta$)**: Given input $z$, it predicts scores $\hat c$ for each base learner.
+2. **Sub-ensemble Selection**: Solve a knapsack-like problem to select top-k learners based on $\hat c$.
+The selection function $K(\hat c)$ is smoothed using noise perturbation (based on Gumbel-max trick) to ensure differentiability.
 3. **Prediction Aggregation**: The selected learners' softmax predictions are masked and summed.
 The result is normalized with softmax to output final class prediction.
-4. **Training**: Only the selection net's parameters `θ` are optimized using backpropagation,
+4. **Training**: Only the selection net's parameters $\theta$ are optimized using backpropagation,
 with gradients flowing through the knapsack selection and aggregation layers.
 
 **Algorithmic innovation:**

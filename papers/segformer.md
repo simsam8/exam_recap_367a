@@ -13,6 +13,7 @@ SegFormer addresses these issues with a **faster and more efficient design**.
 It solves the key challenges of **computational cost**, **scalability**, and **flexibility** in vision transformers.
 
 The goal of SegFormer is to introduce a model that is:
+
 1. **Simple** – no need for complex decoders or positional encodings,  
 2. **Efficient** – optimized for both computation and memory usage,  
 3. **Flexible** – performs well across various datasets and image resolutions.
