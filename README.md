@@ -36,7 +36,7 @@ if it contains any mistakes.
 - [x] GRANDE: Gradient-Based Decision Tree Ensembles for Tabular Data: [paper](https://arxiv.org/abs/2309.17130), [summary](./papers/GRANDE.md)
 - [x] High-Resolution Image Synthesis with Latent Diffusion Models: [paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf), [summary](./papers/high_resolution_image_sythesis.md)
 - [x] Improving Domain Generalization with Interpolation Robustness: [paper](https://openreview.net/pdf?id=Yl_4LpR_3Z), [summary](./papers/improving_domain_generalization.md)
-- [ ] Learning to Maximize Mutual Information for Dynamic Feature Selection: [paper](https://proceedings.mlr.press/v202/covert23a/covert23a.pdf), [summary]()
+- [x] Learning to Maximize Mutual Information for Dynamic Feature Selection: [paper](https://proceedings.mlr.press/v202/covert23a/covert23a.pdf), [summary](./papers/maximize_mutual_information.md)
 - [ ] Mamba: Linear-Time Sequence Modeling with Selective State Spaces: [paper](https://arxiv.org/abs/2312.00752), [summary]()
 - [x] Multi-Robot Path Planning Combining Heuristics and Multi-Agent Reinforcement Learning: [paper](https://arxiv.org/abs/2306.01270), [summary](./papers/multi_robot_path_planning.md)
 - [x] Object-Based Augmentation Improves Quality of Remote Sensing Semantic Segmentation: [paper](https://arxiv.org/abs/2105.05516), [summary](./papers/object_based_augmentation.md)
