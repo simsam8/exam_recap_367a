@@ -1,7 +1,5 @@
 # Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains
 
-**DISCLAIMER**: Summarized by AI
-
 ## Problem They Are Trying to Solve / Purpose of Method
 
 The paper addresses the **inability of standard coordinate-based MLPs to learn high-frequency functions**
