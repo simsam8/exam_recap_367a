@@ -5,6 +5,8 @@
 
 1. Clone the repo.
 2. Run `./picker.sh` on linux and mac, `picker.bat` on windows. This displays a random paper.
+3. To play the Card Game, navigate to `card_game` and run the following command: `python3 -m http.server`. 
+The game can be played at [localhost](http://localhost:8000/).
 
 
 ## How to contribute
