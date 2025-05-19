@@ -17,7 +17,7 @@ Conflict-Based Search uses a two-level approach. It plans
 paths independently and resolves conflicts, ensuring optimal 
 paths but at a high computational cost.
 
-Learning-Base approaches like deep Reinforcement Learning 
+Learning-Based approaches like deep Reinforcement Learning 
 enables real-time adaption, but struggles with sparse rewards 
 and high training costs.
 
