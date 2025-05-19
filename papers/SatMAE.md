@@ -1,10 +1,10 @@
-## SatMAE
+# SatMAE: Pre-Training Transformers for Temporal and Multi-Spectral Satellite Imagery
 
-### Introduction
+## Introduction
 
 Satellite images often contain more than just RGB—they include additional spectral bands like infrared (IR) and ultraviolet (UV), and can also have a temporal dimension (images of the same location at different times). SatMAE is a method for self-supervised pretraining on such data to improve downstream tasks like classification and segmentation.
 
-### Method
+## Method
 
 SatMAE uses a Masked AutoEncoder (MAE) to pretrain a Vision Transformer (ViT) on unlabeled satellite data. Each input image is split into 16×16 patches, which are then linearly embedded and sent to the transformer encoder. A large fraction of these patches is masked randomly.
 
