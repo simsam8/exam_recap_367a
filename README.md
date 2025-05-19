@@ -4,7 +4,7 @@
 ## How to use
 
 1. Clone the repo.
-2. Run `./picker.sh` on linux and mac, `./picker.ps1` on windows. This displays a random paper.
+2. Run `./picker.sh` on linux and mac, `picker.bat` on windows. This displays a random paper.
 
 
 ## How to contribute
