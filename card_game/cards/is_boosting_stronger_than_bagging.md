@@ -3,31 +3,33 @@
 ## Main ideas
 
 - **Problem it solves, why is it needed?**
-  - Evaluates when Boosting outperforms Bagging and vice versa in binary classification.
-  - Addresses lack of clarity about which ensemble method is more effective under different conditions.
-  - Explores how Boosting and Bagging handle bias and variance.
+  - Challenges the belief that boosting (e.g., XGBoost) is always superior to bagging (e.g., Random Forest) in binary classification.
+  - Aims to make Random Forests more competitive by introducing hard-sample focus and per-prediction model weighting.
+  - Seeks improved interpretability and robustness without heavy hyperparameter tuning.
 
 - **How does it differ from other methods?**
-  - Both combine weak classifiers to improve performance, but:
-    - **Bagging**: reduces **variance**, uses **bootstrapped samples**, trains models **independently**, uses **majority vote**.
-    - **Boosting**: reduces **bias and variance**, focuses on **misclassified samples**, trains models **sequentially**, uses **weighted vote**.
+  - Introduces Enhanced Random Forests (ERF) with:
+    - Adaptive sample weighting to prioritize misclassified examples.
+    - Model weighting that uses only the most relevant trees per prediction.
+    - Partial interpretability through identification of top-contributing trees.
+  - Does not rely on residuals (unlike boosting), preserving intuitive tree-based logic.
+  - Performs on par or better than boosting methods, especially using default settings.
 
 - **Brief overview of the method.**
-  - Empirical comparison of Boosting (AdaBoost, Arcing) and Bagging across 23 datasets.
-  - Base learners: **CART**, **C4.5**, **Naive Bayes**.
-  - Boosting trains learners in sequence, reweighting data based on errors.
-  - Bagging trains learners on different bootstrap samples independently.
-  - **Findings**:
-    - Boosting often reduces bias and variance but is sensitive to **noise**.
-    - Bagging is more consistent at reducing **variance**, especially for unstable learners like CART.
-    - Boosting can improve both **stable and unstable** learners.
+  - Train a Random Forest with weighted bootstrap sampling.
+  - Iteratively adjust sample weights using misclassification error (Youden’s J).
+  - During prediction, use nearest neighbors to find the most relevant trees.
+  - Apply only these trees with personalized weights for the final prediction.
+  - Optionally prune low-importance features/samples to simplify the model.
+  - Interpret decisions by analyzing key trees contributing to a prediction.
 
 ---
 
 ## Follow-up questions
 
-- Why is Boosting more sensitive to noise than Bagging?
-- How do CART and C4.5 differ in terms of stability?
-- In what cases would Naive Bayes benefit more from Boosting than from Bagging?
-- What implications do these results have for choosing an ensemble method in real-world applications?
-- How does the concept of "overfitting resistance" in Boosting work?
+- How are nearest neighbors chosen for model weighting?
+- How does the use of Youden’s J statistic affect sample reweighting?
+- What criteria determine when to stop the sample weighting iterations?
+- How does ERF's interpretability compare to SHAP or LIME?
+- In what types of datasets does ERF outperform XGBoost?
+- How scalable is ERF compared to standard RF or XGBoost?
