@@ -143,6 +143,7 @@
       <h1 id="title">Loading...</h1>
       <button class="toggle" onclick="toggleIdeas()">Toggle Main Ideas</button>
       <button class="new-card" onclick="loadCard()">Random Card</button>
+      <button class="toggle" onclick="toggleFollowUps()">Toggle Follow-Up Questions</button>
       <div id="main-ideas" style="display: none;"></div>
       <h2>Follow-up Questions</h2>
       <ul id="follow-up" class="follow-up-list"></ul>
@@ -150,87 +151,105 @@
   </main>
 
   <script>
-    window.MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-      svg: { fontCache: 'global' }
-    };
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+  };
 
-    let currentCard = null;
-    let files = [];
-    const cardListEl = document.getElementById('card-list');
+  let currentCard = null;
+  let files = [];
+  const cardListEl = document.getElementById('card-list');
 
-    async function loadCardList() {
-      try {
-        files = await fetch('cards/index.json').then(res => res.json());
+  async function loadCardList() {
+    try {
+      files = await fetch('cards/index.json').then(res => res.json());
 
-        const titles = await Promise.all(files.map(async file => {
-          const text = await fetch(`cards/${file}`).then(r => r.text());
-          const match = text.match(/^# (.+)$/m);
-          return { file, title: match ? match[1].trim() : file };
-        }));
+      const titles = await Promise.all(files.map(async file => {
+        const text = await fetch(`cards/${file}`).then(r => r.text());
+        const match = text.match(/^# (.+)$/m);
+        return { file, title: match ? match[1].trim() : file };
+      }));
 
-        cardListEl.innerHTML = titles.map(({file, title}) =>
-          `<li><button onclick="loadCard('${file}')" id="btn-${file.replace(/\W/g,'')}">${title}</button></li>`
-        ).join('');
+      cardListEl.innerHTML = titles.map(({file, title}) =>
+        `<li><button onclick="loadCard('${file}')" id="btn-${file.replace(/\W/g,'')}">${title}</button></li>`
+      ).join('');
 
-        if (files.length > 0) loadCard(titles[0].file);
-      } catch (err) {
-        console.error('Error loading card list:', err);
+      if (files.length > 0) loadCard(titles[0].file);
+    } catch (err) {
+      console.error('Error loading card list:', err);
+    }
+  }
+
+  async function loadCard(file = null) {
+    try {
+      if (!file) {
+        let randomFile;
+        do {
+          randomFile = files[Math.floor(Math.random() * files.length)];
+        } while (randomFile === currentCard && files.length > 1);
+        file = randomFile;
       }
-    }
 
-    async function loadCard(file = null) {
-      try {
-        if (!file) {
-          let randomFile;
-          do {
-            randomFile = files[Math.floor(Math.random() * files.length)];
-          } while (randomFile === currentCard && files.length > 1);
-          file = randomFile;
-        }
+      currentCard = file;
+      const cardText = await fetch(`cards/${file}`).then(res => res.text());
 
-        currentCard = file;
-        const cardText = await fetch(`cards/${file}`).then(res => res.text());
+      const titleMatch = cardText.match(/^# (.+)$/m);
+      const mainIdeasMatch = cardText.match(/## Main ideas\s*\n([\s\S]*?)(?=\n##|\n#|$)/i);
+      const followUpsMatch = cardText.match(/## Follow-up questions\s*\n([\s\S]*?)(?=\n##|\n#|$)/i);
 
-        const titleMatch = cardText.match(/^# (.+)$/m);
-        const mainIdeasMatch = cardText.match(/## Main ideas\s*\n([\s\S]*?)(?=\n##|\n#|$)/i);
-        const followUpsMatch = cardText.match(/##+ Follow.*\n([\s\S]*)/i);
+      const mainIdeas = mainIdeasMatch ? marked.parse(mainIdeasMatch[1].trim()) : 'No main ideas found.';
 
-        document.getElementById('title').textContent = titleMatch ? titleMatch[1].trim() : 'Untitled';
-        document.getElementById('main-ideas').innerHTML = marked.parse(mainIdeasMatch ? mainIdeasMatch[1].trim() : 'No main ideas found.');
-        document.getElementById('main-ideas').style.display = 'none';
-        document.getElementById('follow-up').innerHTML = (followUpsMatch ? followUpsMatch[1].trim() : '')
-          .split(/\n- /).filter(Boolean).map(q => `<li>${q.replace(/^[-\s]+/, '')}</li>`).join('');
-
-        document.querySelectorAll('#card-list button').forEach(btn => btn.classList.remove('active'));
-        const activeBtn = document.getElementById('btn-' + file.replace(/\W/g,''));
-        if (activeBtn) activeBtn.classList.add('active');
-
-        if (window.MathJax) {
-          MathJax.typesetPromise();
-        }
-      } catch (err) {
-        console.error('Error loading card:', err);
+      let followUps = '';
+      if (followUpsMatch) {
+        followUps = followUpsMatch[1]
+          .split(/\n/)
+          .filter(line => line.trim().startsWith('-'))
+          .map(q => `<li>${q.replace(/^-/, '').trim()}</li>`)
+          .join('');
       }
+
+      document.getElementById('title').textContent = titleMatch ? titleMatch[1].trim() : 'Untitled';
+      document.getElementById('main-ideas').innerHTML = mainIdeas;
+      document.getElementById('main-ideas').style.display = 'none';
+
+      document.getElementById('follow-up').innerHTML = followUps || '<li><em>No follow-up questions found.</em></li>';
+      document.getElementById('follow-up').style.display = 'none'; // hidden by default
+
+      document.querySelectorAll('#card-list button').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('btn-' + file.replace(/\W/g,''));
+      if (activeBtn) activeBtn.classList.add('active');
+
+      if (window.MathJax && typeof MathJax.typesetPromise === 'function') {
+        MathJax.typesetPromise();
+      }
+    } catch (err) {
+      console.error('Error loading card:', err);
     }
+  }
 
-    function toggleIdeas() {
-      const div = document.getElementById('main-ideas');
-      div.style.display = div.style.display === 'none' ? 'block' : 'none';
-    }
+  function toggleIdeas() {
+    const div = document.getElementById('main-ideas');
+    div.style.display = div.style.display === 'none' ? 'block' : 'none';
+  }
 
-    // Sidebar toggle button logic
-    const toggleBtn = document.getElementById('sidebar-toggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('sidebar-collapsed');
-    });
+  function toggleFollowUps() {
+    const list = document.getElementById('follow-up');
+    list.style.display = list.style.display === 'none' ? 'block' : 'none';
+  }
 
-    // Load marked.js and card list on startup
-    const markedScript = document.createElement('script');
-    markedScript.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
-    markedScript.onload = loadCardList;
-    document.head.appendChild(markedScript);
-  </script>
+  // Sidebar toggle button logic
+  const toggleBtn = document.getElementById('sidebar-toggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('sidebar-collapsed');
+  });
+
+  // Load marked.js and card list on startup
+  const markedScript = document.createElement('script');
+  markedScript.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+  markedScript.onload = loadCardList;
+  document.head.appendChild(markedScript);
+</script>
+
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 </body>
