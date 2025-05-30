@@ -1,5 +1,4 @@
 # TABM
-
 Contributer: Elias Ruud Aronsen
 
 This is a summary of **TABM** (Tabular Multiple Predictions), a simple but powerful method for deep learning on tabular data.
