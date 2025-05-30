@@ -18,6 +18,7 @@ Other band selection methods. (needs clarification)
 ## How the method works
 
 It consists of three steps.
+
 1. Creation of segment dataset
 2. Selecting Landsat-8 bands based on Univariate Marginal Distribution Algorithm (UMDA, what is this?)
 3. Semantic Segmentation for deforestation detection

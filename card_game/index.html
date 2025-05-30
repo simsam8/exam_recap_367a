@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      transition: margin-left 0.3s ease;
+    }
+    #sidebar {
+      width: 250px;
+      background: #fff;
+      border-right: 1px solid #ddd;
+      overflow-y: auto;
+      padding: 1rem;
+      transition: width 0.3s ease, padding 0.3s ease;
+      box-sizing: border-box;
+    }
+    body.sidebar-collapsed #sidebar {
+      width: 0;
+      padding-left: 0;
+      padding-right: 0;
+      overflow: hidden;
+    }
+    #sidebar h2 {
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    #sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #sidebar li {
+      margin-bottom: 0.5rem;
+    }
+    #sidebar button {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 0.5rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #007bff;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    #sidebar button:hover, #sidebar button.active {
+      background: #007bff;
+      color: white;
+    }
+    #main-content {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+      max-width: 800px;
+      margin: 0 auto;
+      transition: margin-left 0.3s ease;
+      position: relative;
+    }
+    /*body.sidebar-collapsed #main-content {*/
+    /*  margin-left: 0;*/
+    /*}*/
+    /*body.sidebar-collapsed #main-content {*/
+    /*  margin-left: 3.5rem; /* width of toggle button + gap */*/
+    /*  margin-right: auto;*/
+    /*  max-width: 800px;*/
+    /*}*/
+
+    body.sidebar-collapsed #main-content {
+      margin: 0 1rem;
+      max-width: none;
+      width: auto;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    button.toggle, button.new-card {
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      margin-right: 0.5rem;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    ul.follow-up-list {
+      margin-top: 0.5rem;
+      padding-left: 1.25rem;
+    }
+
+    /* Sidebar toggle button */
+    #sidebar-toggle {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1000;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      user-select: none;
+      transition: left 0.3s ease;
+    }
+    @media (min-width: 600px) {
+      #sidebar-toggle {
+        left: 260px; /* sidebar width + small gap */
+      }
+      body.sidebar-collapsed #sidebar-toggle {
+        left: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav id="sidebar">
+    <h2>Cards</h2>
+    <ul id="card-list"></ul>
+  </nav>
+
+  <main id="main-content">
+    <button id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+    <div class="card">
+      <h1 id="title">Loading...</h1>
+      <button class="toggle" onclick="toggleIdeas()">Toggle Main Ideas</button>
+      <button class="new-card" onclick="loadCard()">Random Card</button>
+      <div id="main-ideas" style="display: none;"></div>
+      <h2>Follow-up Questions</h2>
+      <ul id="follow-up" class="follow-up-list"></ul>
+    </div>
+  </main>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+
+    let currentCard = null;
+    let files = [];
+    const cardListEl = document.getElementById('card-list');
+
+    async function loadCardList() {
+      try {
+        files = await fetch('cards/index.json').then(res => res.json());
+
+        const titles = await Promise.all(files.map(async file => {
+          const text = await fetch(`cards/${file}`).then(r => r.text());
+          const match = text.match(/^# (.+)$/m);
+          return { file, title: match ? match[1].trim() : file };
+        }));
+
+        cardListEl.innerHTML = titles.map(({file, title}) =>
+          `<li><button onclick="loadCard('${file}')" id="btn-${file.replace(/\W/g,'')}">${title}</button></li>`
+        ).join('');
+
+        if (files.length > 0) loadCard(titles[0].file);
+      } catch (err) {
+        console.error('Error loading card list:', err);
+      }
+    }
+
+    async function loadCard(file = null) {
+      try {
+        if (!file) {
+          let randomFile;
+          do {
+            randomFile = files[Math.floor(Math.random() * files.length)];
+          } while (randomFile === currentCard && files.length > 1);
+          file = randomFile;
+        }
+
+        currentCard = file;
+        const cardText = await fetch(`cards/${file}`).then(res => res.text());
+
+        const titleMatch = cardText.match(/^# (.+)$/m);
+        const mainIdeasMatch = cardText.match(/## Main ideas\s*\n([\s\S]*?)(?=\n##|\n#|$)/i);
+        const followUpsMatch = cardText.match(/##+ Follow.*\n([\s\S]*)/i);
+
+        document.getElementById('title').textContent = titleMatch ? titleMatch[1].trim() : 'Untitled';
+        document.getElementById('main-ideas').innerHTML = marked.parse(mainIdeasMatch ? mainIdeasMatch[1].trim() : 'No main ideas found.');
+        document.getElementById('main-ideas').style.display = 'none';
+        document.getElementById('follow-up').innerHTML = (followUpsMatch ? followUpsMatch[1].trim() : '')
+          .split(/\n- /).filter(Boolean).map(q => `<li>${q.replace(/^[-\s]+/, '')}</li>`).join('');
+
+        document.querySelectorAll('#card-list button').forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.getElementById('btn-' + file.replace(/\W/g,''));
+        if (activeBtn) activeBtn.classList.add('active');
+
+        if (window.MathJax) {
+          MathJax.typesetPromise();
+        }
+      } catch (err) {
+        console.error('Error loading card:', err);
+      }
+    }
+
+    function toggleIdeas() {
+      const div = document.getElementById('main-ideas');
+      div.style.display = div.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Sidebar toggle button logic
+    const toggleBtn = document.getElementById('sidebar-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('sidebar-collapsed');
+    });
+
+    // Load marked.js and card list on startup
+    const markedScript = document.createElement('script');
+    markedScript.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+    markedScript.onload = loadCardList;
+    document.head.appendChild(markedScript);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</body>
+</html>

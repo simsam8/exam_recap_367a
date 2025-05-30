@@ -37,4 +37,4 @@ In the decoder we upsample and combine with skip connections
 from the CNN in the encoder.
 
 
-![TransUNet architecture](https://github.com/simsam8/idd-solafune/blob/main/trans_unet/img/transunet.png)
+![TransUNet architecture](./figures/transunet.png)
